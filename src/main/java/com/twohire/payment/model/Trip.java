@@ -21,7 +21,7 @@ public class Trip {
     @NotNull
     private long userId;
 
-    private Date date;
+    private Date date = new Date();
 
     private long time;
 

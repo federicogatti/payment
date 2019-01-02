@@ -21,9 +21,6 @@ public class Payment {
 
     private long fee;
 
-    @Transient
-    private long total;
-
     private PaymentStatus status = PaymentStatus.AUTHORIZATIONREQUEST;
 
     @OneToMany(mappedBy = "payment", cascade = CascadeType.ALL)
@@ -67,5 +64,9 @@ public class Payment {
 
     public List<Trip> getTrips() {
         return trips;
+    }
+
+    public void setTrips(List<Trip> trips) {
+        this.trips = trips;
     }
 }
