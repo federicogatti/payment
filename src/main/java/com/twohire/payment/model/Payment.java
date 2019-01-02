@@ -1,12 +1,13 @@
 package com.twohire.payment.model;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.Id;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.OneToMany;
-import javax.persistence.Transient;
 import java.util.Date;
 import java.util.List;
 
@@ -21,6 +22,7 @@ public class Payment {
 
     private long fee;
 
+    //@Type(type = "org.hibernate.type.TextType")
     private PaymentStatus status = PaymentStatus.AUTHORIZATIONREQUEST;
 
     @OneToMany(mappedBy = "payment", cascade = CascadeType.ALL)

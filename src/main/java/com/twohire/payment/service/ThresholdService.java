@@ -6,8 +6,6 @@ import com.twohire.payment.repository.GetTripsByUserId;
 import com.twohire.payment.repository.PaymentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,8 +21,7 @@ public class ThresholdService {
 
     @Autowired
     public ThresholdService(GetTripsByUserId getTripsByUserId,
-                            PaymentRepository paymentRepository,
-                            PaymentService paymentService) {
+                            PaymentRepository paymentRepository) {
         this.getTripsByUserId = getTripsByUserId;
         this.paymentRepository = paymentRepository;
     }

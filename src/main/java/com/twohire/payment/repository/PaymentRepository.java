@@ -12,4 +12,7 @@ public interface PaymentRepository extends JpaRepository<Payment, Long> {
 
     @Query("select p from Trip as t left join t.payment as p where t.userId=:userId")
     List<Payment> findByUserId(Long userId);
+
+    @Query("select p from Payment as p where p.status=0 or p.status=2")
+    List<Payment> findPaymentsNotPaid();
 }
