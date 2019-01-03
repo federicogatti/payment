@@ -1,14 +1,11 @@
 package com.twohire.payment.rest;
 
-import com.rabbitmq.tools.json.JSONUtil;
 import com.twohire.payment.model.Payment;
 import com.twohire.payment.repository.PaymentRepository;
 import com.twohire.payment.service.PaymentService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.Output;
 import org.springframework.data.repository.query.Param;
-import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.web.bind.annotation.GetMapping;

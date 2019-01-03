@@ -53,7 +53,7 @@ public class Payment {
     }
 
     public long getTotal() {
-        return trips.stream().mapToLong(Trip::getPrice).sum();
+        return trips.stream().mapToLong(value -> value.getPrice() + value.getPenalty()).sum();
     }
 
     public PaymentStatus getStatus() {
